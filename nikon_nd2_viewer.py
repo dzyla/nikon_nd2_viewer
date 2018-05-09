@@ -17,9 +17,9 @@ def open_nd2():
 
         cv2.namedWindow('ImageStack')
         cv2.namedWindow('ImageStack', cv2.WINDOW_NORMAL)
-        cv2.createTrackbar('Particle', 'ImageStack', 0, z, nothing)
+        cv2.createTrackbar('Slice', 'ImageStack', 0, z, nothing)
         while (1):
-            slice = cv2.getTrackbarPos('Particle', 'ImageStack')
+            slice = cv2.getTrackbarPos('Slice', 'ImageStack')
 
             img = nikon_file[slice-1]
             if (np.max(img) - np.min(img)) != 0:
